@@ -1,0 +1,129 @@
+body {
+	min-width: 1000px;
+	background-color: black;
+	color: #FFFFFF;
+}
+
+#sectOne {
+	float: left;
+	background: url("../images/cont1_bg.jpg");
+	position: relative;
+	width: 100%;
+	height: 800px;
+	display: block;
+	overflow: hidden;
+}
+
+#header {
+	background-color: #d20014;
+	width: 100%;
+	height: 2em;
+	display: block;
+}
+
+#header a img {
+	float: left;
+	display: block;
+	height : 4em;
+	width : 5em;
+	margin-top: -1em;
+}
+
+#mainImage{
+	position: absolute;
+	display: block;
+	float: left;
+	background: url("../images/cont1_v.png") no-repeat;
+	height: 85%;
+	width: 85%;
+	background-position: center;
+	left: 50%;
+	background-size: contain;
+	transform: translateX(-50%);
+}
+
+.title {
+	float: left;
+    font: bold 330%/100% "Lucida Grande";
+    position: relative;
+    /*color: #ffdf00;*/
+    margin-top: 650px;
+    margin-left: 375px;
+    text-align: center;
+    font-size: 72px;
+  	background: -webkit-linear-gradient(#fff3b2, #e5c100);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.title span {
+    background: url(gradient.png) repeat-x;
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 31px;
+}
+
+#center {
+	background: url("../images/line.png");
+	position: relative;
+	float: left;
+	clear: left;
+	width: 100%;
+	height: 2em;
+	display: block;
+}
+
+#sectTwo {
+	position: relative;
+	float: left;
+	clear: left;
+	background: url("../images/cont3_bg.jpg");
+	background-position: center;
+	width: 100%;
+	height: 630px;
+	display: block;
+	overflow: hidden;
+}
+
+#lineLeft {
+	position: absolute;
+	left: 0px;
+	top: -4px;
+	width: 470px;
+	height: 300px;
+	background-image: url("../images/cont3_obi_left.png");	
+}
+
+#lineRight {
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	width: 143px;
+	height: 181px;
+	background-image: url("../images/cont3_obi_right.png");
+}
+
+h2{
+	text-align: center;
+	margin-top: 250px;
+	background: -webkit-linear-gradient(#fff3b2, #e5c100);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#startButton{
+	height: 80px;
+	width: 140px;
+	border: 2px solid black;
+	border-radius: 70%;
+	margin: auto;
+	background-color: #e5c100;
+	box-shadow: 5px 5px 8px #222222;
+
+}
+#startButton p{
+	text-align: center;
+	margin-top: 30px;
+	font-family: Arial;
+	font-weight: bold;
+}
