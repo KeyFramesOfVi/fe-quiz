@@ -1,0 +1,68 @@
+body {
+	min-width: 1000px;
+	background-color: black;
+	color: #FFFFFF;
+}
+#sectThree {
+	position: relative;
+	float: left;
+	clear: left;
+	background: url("../images/cont2_bg.jpg");
+	background-position: center;
+	max-width: 100%;
+	height: 620px;
+	display: block;
+	overflow: hidden;
+}
+
+#myForm h2{
+	text-align: center;
+	margin-top: 200px;
+	background: -webkit-linear-gradient(#fff3b2, #e5c100);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#myForm ul{
+	text-align: center;
+}
+
+#myForm ul li{
+	padding: 8px;
+	display: block;
+}
+
+#lineLeft {
+	position: absolute;
+	left: 0px;
+	top: -4px;
+	width: 470px;
+	height: 300px;
+	background-image: url("../images/cont3_obi_left.png");	
+}
+
+#lineRight {
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	width: 143px;
+	height: 181px;
+	background-image: url("../images/cont3_obi_right.png");
+}
+
+
+
+.button{
+	display: inline-block;
+}
+
+#nextButton{
+	float: right;
+	margin-right: 800px;
+}
+
+#backButton{
+	float: left;
+	margin-left: 800px;
+}
+
