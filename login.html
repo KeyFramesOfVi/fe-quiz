@@ -4,10 +4,13 @@
 	<meta name="inspiration" content="Nintendo">
 
 	<head>
-		<link type="text/css" rel="stylesheet" href="css/index.css">
+		<link type="text/css" rel="stylesheet" href="css/login.css">
 		<title>
 			Fire Emblem Heroes: Quiz
 		</title>
+		<script type="text/javascript" src="js/jquery-3.1.1.min.js" defer></script>
+		<!--<script type="text/javascript" src="js/cookieutil.js" defer></script>-->
+		<script type="text/javascript" src="js/login.js" defer></script>
 	</head>
 
 	<body>
@@ -18,8 +21,20 @@
 						<img src="http://logok.org/wp-content/uploads/2014/12/Nintendo-logo-red.png" alt="Nintendo" >
 					</a>
 			</div>
-			<div id="mainImage"></div>
-			<h1 class="title"><span></span>Fire Emblem Heroes Quiz App</h1>
+			<h2> <span>Fire Emblem Heroes Quiz App</span> </h2>
+
+			<form id="registerForm"> 
+				<h3> Need to Register? </h3>
+            	<input id="name" type="text" placeholder="Name" value=""/>
+            	<input id="pw" type="password" placeholder="Password" value=""/>
+            	<input id="registerBtn" type="submit" value="Get Account"/> 
+        	</form>
+        	<form id="loginForm"> 
+        		<h3> Already Registered? Sign In. </h3>
+            	<input id="userName" type="text" placeholder="Enter Username" value=""/>
+            	<input id="userPw" type="password" placeholder="Enter Password" value=""/>
+            	<input id="Loginbtn" type="submit" value="Login"/> 
+       		</form>
 		</div>
 
 	</body>
