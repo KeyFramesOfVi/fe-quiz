@@ -33,6 +33,8 @@ $(document).ready(() => {
     let checkFlag = true;
     const name = $('#name').val();
     const pwd = $('#pw').val();
+    cookieUtil.createCookie('name', 'Victor');
+    cookieUtil.readCookie('name');
     if (name.length === 0 || pwd.length === 0) {
       return false;
     }
