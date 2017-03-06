@@ -36,8 +36,6 @@ $(document).ready(() => {
     if (name.length === 0 || pwd.length === 0) {
       return false;
     }
-    cookieUtil.createCookie('name', name);
-    alert(readCookie('name'));
     const nameCheck = checkUserName(name);
     const pwdCheck = checkPwd(pwd);
     if (nameCheck !== 'ok') {
