@@ -42,6 +42,19 @@ h3 {
 	font-family: Arial;
 }
 
+
+.errorSection{
+    position: absolute;
+}
+.error{
+    width: 100%;
+    position: relative;
+    color: #e84e4f;
+    background-color: #9c2b2e;
+    border: 2px solid #e84e4f;
+    font-family: Arial, Helvetica;
+}
+
 hr{
 	border: 0;
     width: 80%;
@@ -71,73 +84,4 @@ input{
 	float: right;
 	display: block;
 	margin-right: 15%;
-}
-
-.footer {
-    position: relative;
-    width: 100%;
-    height: 285px;
-    background-color: white; 
-}
-.footer .btn_poricy {
-    position: relative;
-    width: 138px;
-    margin: 0 auto;
-    padding-top: 45px; 
-}
-.footer ul {
-    position: relative;
-    width: 170px;
-    margin: 0 auto;
-    padding-top: 25px; 
-}
-.footer ul li {
-    float: left;
-    width: 40px;
-    margin-left: 15px; 
-}
-.footer .copylight {
-    position: relative;
-    width: 100%;
-    text-align: center;
-    margin-top: 70px;
-    font-size: 12px;
-    color: #847c7c;
-    line-height: 2; 
-}
-
-
-.footer-share {
-    margin-bottom: 35px; 
-}
-.footer-share li {
-    display: inline-block;
-    margin: 0 5px; 
-}
-.footer-share li a {
-    display: block;
-    text-indent: -9999px;
-    width: 40px;
-    height: 40px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain; 
-}
-.footer-share li.sns-facebook a {
-    background-image: url("../img/facebook_btn.png"); 
-}
-.footer-share li.sns-twitter a {
-      background-image: url("../img/twitter_btn.png"); 
-}
-.footer-share li.sns-line a {
-      background-image: url("../img/line_btn.png");
-}
-.legal-attribution {
-	font-size: 12px;
-	line-height: 1.6em;
-	margin-bottom: 10px; 
-}
-
-.copyright {
-  font-size: 13px; 
 }
