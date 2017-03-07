@@ -13,34 +13,37 @@ function getCorrectAnswers() {
   }
   return totalCorrect;
 }
+function startQuiz() {
+  $('startButton').css({ 'background-color': '#aa8f00',
+    outline: 'none',
+    'box-shadow': 'inset 0px 0px 4px #ccc' });
+  $('form').fadeOut(300, () => {
+    alert('do you get here?');
+    $.getJSON('../data/questions.json', (data) => {
+      $('#startButton').remove();
+      allQuestions = data;
+      // Create a question, and four inputs for each possible answer
+      const question = allQuestions[index];
+      const form = $('<form method="post" id="myForm"></form>');
+      form.append(`<h2>${question.question}</h2>`);
+      const list = $('<ul class="quizList"></ul>');
+      let answerValue = 0;
+      question.choices.forEach((choice) => {
+        list.append(`<li><input type="radio" name="answer" value=${answerValue}><label>${choice}</label></li>`);
+        answerValue += 1;
+      });
+      form.append(list);
+      form.append('<button class="button" id="nextButton" type="button">Next</button>');
+      form.append('<button class="button" id="backButton" type="button">Back</button>');
+      $('#sectThree').append(form);
+    });
+  });
+  $('form').fadeIn(300);
+}
 
 $(document).ready(() => {
-  $('#startButton').click(function () {
-    $(this).css({ 'background-color': '#aa8f00',
-      outline: 'none',
-      'box-shadow': 'inset 0px 0px 4px #ccc' });
-    $('form').fadeOut(300, () => {
-      alert('do you get here?');
-      $.getJSON('../data/questions.json', (data) => {
-        $('#startButton').remove();
-        allQuestions = data;
-        // Create a question, and four inputs for each possible answer
-        const question = allQuestions[index];
-        const form = $('<form method="post" id="myForm"></form>');
-        form.append(`<h2>${question.question}</h2>`);
-        const list = $('<ul class="quizList"></ul>');
-        let answerValue = 0;
-        question.choices.forEach((choice) => {
-          list.append(`<li><input type="radio" name="answer" value=${answerValue}><label>${choice}</label></li>`);
-          answerValue += 1;
-        });
-        form.append(list);
-        form.append('<button class="button" id="nextButton" type="button">Next</button>');
-        form.append('<button class="button" id="backButton" type="button">Back</button>');
-        $('#sectThree').append(form);
-      });
-    });
-    $('form').fadeIn(300);
+  $('#startButton').click(() => {
+    startQuiz();
   });
 });
 
