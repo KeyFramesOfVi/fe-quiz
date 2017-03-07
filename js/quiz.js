@@ -44,6 +44,7 @@ function startQuiz() {
 
 $(document).ready(() => {
   $('#startButton').click(() => {
+    alert('hi');
     startQuiz();
   });
 });
