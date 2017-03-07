@@ -17,11 +17,11 @@ function startQuiz() {
   $('#startButton').css({ 'background-color': '#aa8f00',
     outline: 'none',
     'box-shadow': 'inset 0px 0px 4px #ccc' });
-  alert('Hi');
-  $('#startButton').fadeOut(300, () => {
-    alert('do you get here?');
+  $()
+  $('.startMenu').fadeOut(300, () => {
     $.getJSON('../data/questions.json', (data) => {
-      $('#startButton').remove();
+      $('.startMenu').remove();
+
       allQuestions = data;
       // Create a question, and four inputs for each possible answer
       const question = allQuestions[index];
@@ -41,8 +41,14 @@ function startQuiz() {
   });
 }
 
+
 $(document).ready(() => {
-  $('#startButton').click(() => {
+  const userName = cookieUtil.readCookie('name');
+  $('#sectThree h2').text(`Hello ${userName}, click the button below to start the Quiz!`);
+});
+
+$(document).ready(() => {
+  $('.startMenu').on('click', '#startButton', () => {
     startQuiz();
   });
 });
