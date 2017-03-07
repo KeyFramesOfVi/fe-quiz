@@ -70,6 +70,29 @@ function startQuiz() {
           $('form').fadeIn(300);
         }
       });
+      $(document).ready(() => {
+        $('form').on('click', '#backButton', () => {
+          if (index === 0) {
+            alert('This is the first question, cannot go further back.');
+          } else {
+            $('form').fadeOut(300, () => {
+              index -= 1;
+              answers.pop();
+              const userAnswer = localStorage.getItem(`answer${index}`);
+              question = allQuestions[index];
+              form = $('body').find('#myForm');
+              form.find('h2').text(question.question);
+              const quizItems = $('label');
+              // eslint-disable-next-line func-names
+              quizItems.each(function (i) {
+                $(this).text(question.choices[i]);
+              });
+              $(`input[value=${userAnswer}]`).prop('checked', true);
+            });
+            $('form').fadeIn(300);
+          }
+        });
+      });
     });
   });
 }
