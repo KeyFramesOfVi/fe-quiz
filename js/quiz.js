@@ -54,7 +54,7 @@ $(document).ready(() => {
 });
 
 $(document).ready(() => {
-  $('#myForm').on('click', '#nextButton', () => {
+  $('form').on('click', '#nextButton', () => {
     if (!$('input:radio').is(':checked')) {
       alert('Please choose an answer before moving on.');
     } else {
@@ -90,7 +90,7 @@ $(document).ready(() => {
 });
 
 $(document).ready(() => {
-  $('#myForm').on('click', '#backButton', () => {
+  $('form').on('click', '#backButton', () => {
     if (index === 0) {
       alert('This is the first question, cannot go further back.');
     } else {
