@@ -53,6 +53,7 @@ $(document).ready(() => {
     alert(allQuestions);
     alert(data);
   });
+  alert('game?');
   // Create a question, and four inputs for each possible answer
   const question = allQuestions[index];
   alert(question.question);
