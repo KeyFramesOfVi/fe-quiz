@@ -3,15 +3,15 @@ var cookieUtil = {
     this.enabled = this.cookiesEnabled() ? 'Enabled' : 'Disabled';
   },
   createCookie(name, value, days) {
+    var expires;
     if (days) {
       const date = new Date();
       date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-      let expires = `; expires=${date.toGMTString()}`;
+      expires = `; expires=${date.toGMTString()}`;
     } else {
-      let expires = '';
+      expires = '';
     }
     document.cookie = `${name}=${value}${expires}; path=/`;
-    alert(document.cookie);
   },
   readCookie(name) {
     const search = `${name}=`;
