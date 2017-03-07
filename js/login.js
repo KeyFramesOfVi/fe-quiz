@@ -34,9 +34,9 @@ $(document).ready(() => {
     const name = $('#name').val();
     const pwd = $('#pw').val();
     alert(cookieUtil);
-    window.cookieUtil.init();
-    window.cookieUtil.createCookie('name', 'Victor', 10);
-    alert(window.cookieUtil.readCookie('name'));
+    cookieUtil.init();
+    cookieUtil.createCookie('name', 'Victor', 10);
+    alert(cookieUtil.readCookie('name'));
     if (name.length === 0 || pwd.length === 0) {
       return false;
     }
