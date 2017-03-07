@@ -68,7 +68,7 @@ $(document).ready(() => {
 });*/
 
 $(document).ready(() => {
-  $('#myForm').on('click', '#nextButton', () => {
+  $('#nextButton').on('click', () => {
     if (!$('input:radio').is(':checked')) {
       alert('Please choose an answer before moving on.');
     } else {
