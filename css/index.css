@@ -67,6 +67,8 @@ body {
     text-align: center;
     font-size: 72px;
   	background: -webkit-linear-gradient(#fff3b2, #e5c100);
+  	background: -moz-linear-gradient(#fff3b2, #e5c100);
+  	background: linear-gradient(#fff3b2, #e5c100);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -122,6 +124,8 @@ h2{
 	text-align: center;
 	margin-top: 250px;
 	background: -webkit-linear-gradient(#fff3b2, #e5c100);
+  	background: -moz-linear-gradient(#fff3b2, #e5c100);
+  	background: linear-gradient(#fff3b2, #e5c100);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
