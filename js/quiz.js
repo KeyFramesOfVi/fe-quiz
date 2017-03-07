@@ -17,14 +17,15 @@ function startQuiz() {
   $('#startButton').css({ 'background-color': '#aa8f00',
     outline: 'none',
     'box-shadow': 'inset 0px 0px 4px #ccc' });
+
   $('.startMenu').fadeOut(300, () => {
     $.getJSON('../data/questions.json', (data) => {
       $('.startMenu').remove();
 
       allQuestions = data;
       // Create a question, and four inputs for each possible answer
-      const question = allQuestions[index];
-      const form = $('<form method="post" id="myForm"></form>');
+      let question = allQuestions[index];
+      let form = $('<form method="post" id="myForm"></form>');
       form.append(`<h2>${question.question}</h2>`);
       const list = $('<ul class="quizList"></ul>');
       let answerValue = 0;
@@ -36,6 +37,39 @@ function startQuiz() {
       form.append('<button class="button" id="nextButton" type="button">Next</button>');
       form.append('<button class="button" id="backButton" type="button">Back</button>');
       $('#sectThree').append(form);
+      $('form').on('click', '#nextButton', () => {
+        if (!$('input:radio').is(':checked')) {
+          alert('Please choose an answer before moving on.');
+        } else {
+          $('form').fadeOut(300, () => {
+            const userAnswer = +$('input[name="answer"]:checked').val();
+            answers.push(userAnswer);
+            localStorage.setItem(`answer${index}`, userAnswer);
+            if (index === allQuestions.length - 1) {
+              correctAnswers = getCorrectAnswers();
+              alert(`Congratulations for finishing the quiz. You got ${correctAnswers} questions right!`);
+              window.location = 'index.html';
+              return;
+            }
+            index += 1;
+            question = allQuestions[index];
+            form = $('body').find('#myForm');
+            form.find('h2').text(question.question);
+            const quizItems = $('label');
+            // eslint-disable-next-line func-names
+            quizItems.each(function (i) {
+              $(this).text(question.choices[i]);
+            });
+            if (localStorage.getItem(`answer${index}`)) {
+              const nextAnswer = localStorage.getItem(`answer${index}`);
+              $(`input[value=${nextAnswer}]`).prop('checked', true);
+            } else {
+              $(`input[value=${userAnswer}]`).prop('checked', false);
+            }
+          });
+          $('form').fadeIn(300);
+        }
+      });
     });
   });
 }
@@ -53,6 +87,7 @@ $(document).ready(() => {
   });
 });
 
+/*
 $(document).ready(() => {
   $('form').on('click', '#nextButton', () => {
     if (!$('input:radio').is(':checked')) {
@@ -73,7 +108,7 @@ $(document).ready(() => {
         const form = $('body').find('#myForm');
         form.find('h2').text(question.question);
         const quizItems = $('label');
-        /* eslint-disable-next-line func-names */
+        // eslint-disable-next-line func-names
         quizItems.each(function (i) {
           $(this).text(question.choices[i]);
         });
@@ -102,7 +137,7 @@ $(document).ready(() => {
         const form = $('body').find('#myForm');
         form.find('h2').text(question.question);
         const quizItems = $('label');
-        /* eslint-disable-next-line func-names */
+        // eslint-disable-next-line func-names
         quizItems.each(function (i) {
           $(this).text(question.choices[i]);
         });
@@ -112,3 +147,4 @@ $(document).ready(() => {
     }
   });
 });
+*/
