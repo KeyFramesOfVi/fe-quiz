@@ -16,11 +16,26 @@ function getCorrectAnswers() {
 
 $(document).ready(() => {
   (() => {
-    $.getJSON('../data/questions.json', () => {
+    $.getJSON('../data/questions.json', (data) => {
       alert('success');
+      allQuestions = data;
     })
     .done(() => {
       alert('second success');
+      // Create a question, and four inputs for each possible answer
+      const question = allQuestions[index];
+      const form = $('<form method="post" id="myForm"></form>');
+      form.append(`<h2>${question.question}</h2>`);
+      const list = $('<ul class="quizList"></ul>');
+      let answerValue = 0;
+      question.choices.forEach((choice) => {
+        list.append(`<li><input type="radio" name="answer" value=${answerValue}><label>${choice}</label></li>`);
+        answerValue += 1;
+      });
+      form.append(list);
+      form.append('<button class="button" id="nextButton" type="button">Next</button>');
+      form.append('<button class="button" id="backButton" type="button">Back</button>');
+      $('#sectThree').append(form);
     })
     .fail(() => {
       alert('error');
