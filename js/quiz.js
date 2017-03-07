@@ -49,6 +49,8 @@ $(document).ready(() => {
   $.getJSON('../data/questions.json', (data) => {
     alert('I need to know it gets here!');
     allQuestions = data;
+    alert(allQuestions);
+    alert(data);
   });
   // Create a question, and four inputs for each possible answer
   const question = allQuestions[index];

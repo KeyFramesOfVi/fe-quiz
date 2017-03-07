@@ -73,7 +73,6 @@ $(document).ready(() => {
     if (username === storageName && password === storagePassword) {
       cookieUtil.init();
       cookieUtil.createCookie('name', storageName, 10);
-      alert(cookieUtil.readCookie('name'));
       window.location = 'quiz.html';
     } else if (!$('.errorSection p').exists()) {
       $('.errorSection').append('<p class="error">Error: username or password is not correct.</p>');
