@@ -14,9 +14,6 @@ function getCorrectAnswers() {
   return totalCorrect;
 }
 function startQuiz() {
-  $('startButton').css({ 'background-color': '#aa8f00',
-    outline: 'none',
-    'box-shadow': 'inset 0px 0px 4px #ccc' });
   alert('Hi');
   $('form').fadeOut(300, () => {
     alert('do you get here?');
@@ -44,7 +41,9 @@ function startQuiz() {
 
 $(document).ready(() => {
   $('#startButton').click(() => {
-    alert('hi');
+    $('startButton').css({ 'background-color': '#aa8f00',
+      outline: 'none',
+      'box-shadow': 'inset 0px 0px 4px #ccc' });
     startQuiz();
   });
 });
