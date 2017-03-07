@@ -49,6 +49,7 @@ $(document).ready(() => {
   $.getJSON('../data/questions.json', (data) => {
     alert('I need to know it gets here!');
     allQuestions = data;
+    alert(allQuestions[0].question);
     alert(allQuestions);
     alert(data);
   });
