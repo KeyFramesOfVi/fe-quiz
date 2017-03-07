@@ -17,7 +17,6 @@ function startQuiz() {
   $('#startButton').css({ 'background-color': '#aa8f00',
     outline: 'none',
     'box-shadow': 'inset 0px 0px 4px #ccc' });
-  $()
   $('.startMenu').fadeOut(300, () => {
     $.getJSON('../data/questions.json', (data) => {
       $('.startMenu').remove();
