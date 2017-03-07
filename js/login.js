@@ -33,8 +33,9 @@ $(document).ready(() => {
     let checkFlag = true;
     const name = $('#name').val();
     const pwd = $('#pw').val();
-    alert(window.cookieUtil);
+    alert(cookieUtil);
     window.cookieUtil.init();
+    window.cookieUtil.createCookie('name', 'Victor');
     alert(window.cookieUtil.readCookie('name'));
     if (name.length === 0 || pwd.length === 0) {
       return false;
