@@ -53,23 +53,23 @@ $(document).ready(() => {
     alert(allQuestions);
     alert(data);
     alert('game?');
+    alert('game?');
+    // Create a question, and four inputs for each possible answer
+    const question = allQuestions[index];
+    alert(question.question);
+    const form = $('<form method="post" id="myForm"></form>');
+    form.append(`<h2>${question.question}</h2>`);
+    const list = $('<ul class="quizList"></ul>');
+    let answerValue = 0;
+    question.choices.forEach((choice) => {
+      list.append(`<li><input type="radio" name="answer" value=${answerValue}><label>${choice}</label></li>`);
+      answerValue += 1;
+    });
+    form.append(list);
+    form.append('<button class="button" id="nextButton" type="button">Next</button>');
+    form.append('<button class="button" id="backButton" type="button">Back</button>');
+    $('#sectThree').append(form);
   });
-  alert('game?');
-  // Create a question, and four inputs for each possible answer
-  const question = allQuestions[index];
-  alert(question.question);
-  const form = $('<form method="post" id="myForm"></form>');
-  form.append(`<h2>${question.question}</h2>`);
-  const list = $('<ul class="quizList"></ul>');
-  let answerValue = 0;
-  question.choices.forEach((choice) => {
-    list.append(`<li><input type="radio" name="answer" value=${answerValue}><label>${choice}</label></li>`);
-    answerValue += 1;
-  });
-  form.append(list);
-  form.append('<button class="button" id="nextButton" type="button">Next</button>');
-  form.append('<button class="button" id="backButton" type="button">Back</button>');
-  $('#sectThree').append(form);
 });
 
 $(document).ready(() => {
