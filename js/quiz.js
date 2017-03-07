@@ -20,6 +20,7 @@ $(document).ready(() => {
       outline: 'none',
       'box-shadow': 'inset 0px 0px 4px #ccc' });
     $('form').fadeOut(300, () => {
+      alert('do you get here?');
       $.getJSON('../data/questions.json', (data) => {
         $('#startButton').remove();
         allQuestions = data;
