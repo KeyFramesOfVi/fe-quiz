@@ -33,10 +33,6 @@ $(document).ready(() => {
     let checkFlag = true;
     const name = $('#name').val();
     const pwd = $('#pw').val();
-    alert(cookieUtil);
-    cookieUtil.init();
-    cookieUtil.createCookie('name', 'Victor', 10);
-    alert(cookieUtil.readCookie('name'));
     if (name.length === 0 || pwd.length === 0) {
       return false;
     }
@@ -75,6 +71,9 @@ $(document).ready(() => {
     const storageName = localStorage.getItem('username');
     const storagePassword = localStorage.getItem('password');
     if (username === storageName && password === storagePassword) {
+      cookieUtil.init();
+      cookieUtil.createCookie('name', storageName, 10);
+      alert(cookieUtil.readCookie('name'));
       window.location = 'quiz.html';
     } else if (!$('.errorSection p').exists()) {
       $('.errorSection').append('<p class="error">Error: username or password is not correct.</p>');
