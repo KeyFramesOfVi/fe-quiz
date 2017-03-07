@@ -55,6 +55,7 @@ $(document).ready(() => {
   });
   // Create a question, and four inputs for each possible answer
   const question = allQuestions[index];
+  alert(question.question);
   const form = $('<form method="post" id="myForm"></form>');
   form.append(`<h2>${question.question}</h2>`);
   const list = $('<ul class="quizList"></ul>');
