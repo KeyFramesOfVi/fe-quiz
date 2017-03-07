@@ -46,15 +46,7 @@ function getCorrectAnswers() {
 }
 
 $(document).ready(() => {
-  $.getJSON('../data/questions.json')
-    .done((data) => {
-      alert(`worked ${data}`);
-    })
-    .fail((jqxhr, textStatus, error) => {
-      alert(`request failed: ${textStatus}${error}`);
-    });
-});
-    /*
+  $.getJSON('../data/questions.json', (data) => {
     allQuestions = data;
     // Create a question, and four inputs for each possible answer
     const question = allQuestions[index];
@@ -71,7 +63,7 @@ $(document).ready(() => {
     form.append('<button class="button" id="backButton" type="button">Back</button>');
     $('#sectThree').append(form);
   });
-});*/
+});
 
 $(document).ready(() => {
   $('#myForm').on('click', '#nextButton', () => {
