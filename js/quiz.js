@@ -1,4 +1,6 @@
-const allQuestions = [
+/*
+
+  const allQuestions = [
   {
     question: 'During Chapter 9, when do you fight the "Mysterious Man"?',
     choices: ['9-5', '8-5', '9-4', '9-3'],
@@ -25,7 +27,9 @@ const allQuestions = [
     correctAnswer: 3,
   },
 ];
+*/
 
+let allQuestions;
 
 let index = 0;
 let correctAnswers = 0;
@@ -42,6 +46,9 @@ function getCorrectAnswers() {
 }
 
 $(document).ready(() => {
+  $.getJSON('../data/questions.json', (data) => {
+    allQuestions = data;
+  });
   // Create a question, and four inputs for each possible answer
   const question = allQuestions[index];
   const form = $('<form method="post" id="myForm"></form>');
