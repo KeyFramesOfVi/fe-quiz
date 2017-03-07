@@ -1,34 +1,3 @@
-/*
-
-  const allQuestions = [
-  {
-    question: 'During Chapter 9, when do you fight the "Mysterious Man"?',
-    choices: ['9-5', '8-5', '9-4', '9-3'],
-    correctAnswer: 2,
-  },
-  {
-    question: 'Choose the character that was NOT part of the same banner as the other 3.',
-    choices: ['Lyn', 'Robin', 'Takumi', 'Camilla'],
-    correctAnswer: 1,
-  },
-  {
-    question: 'Which character is NOT part of the new cast of heroes first introduced in Fire Emblem Heroes" story?',
-    choices: ['Alphonse', 'Sharena', 'Anna', 'Veronica'],
-    correctAnswer: 2,
-  },
-  {
-    question: 'Which of these characters in FE: Heroes is NOT part of the "Red" weapon triangle?',
-    choices: ['Lyn', 'Tharja', 'Sanaki', 'Linde'],
-    correctAnswer: 3,
-  },
-  {
-    question: 'How many Arena matches can you win in a row before the total score is added up?',
-    choices: [4, 5, 6, 7],
-    correctAnswer: 3,
-  },
-];
-*/
-
 let allQuestions;
 
 let index = 0;
@@ -62,6 +31,7 @@ $(document).ready(() => {
     form.append('<button class="button" id="nextButton" type="button">Next</button>');
     form.append('<button class="button" id="backButton" type="button">Back</button>');
     $('#sectThree').append(form);
+    return;
   });
 });
 
@@ -123,11 +93,4 @@ $(document).ready(() => {
       $('form').fadeIn(300);
     }
   });
-});
-
-$('window').on('unload', () => {
-  const i = 4;
-  while (i > 0) {
-    localStorage.removeItem(`answer${i}`);
-  }
 });
