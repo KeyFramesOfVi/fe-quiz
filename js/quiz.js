@@ -17,6 +17,7 @@ function startQuiz() {
   $('startButton').css({ 'background-color': '#aa8f00',
     outline: 'none',
     'box-shadow': 'inset 0px 0px 4px #ccc' });
+  alert('Hi');
   $('form').fadeOut(300, () => {
     alert('do you get here?');
     $.getJSON('../data/questions.json', (data) => {
