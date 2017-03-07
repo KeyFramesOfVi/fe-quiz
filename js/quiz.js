@@ -15,6 +15,23 @@ function getCorrectAnswers() {
 }
 
 $(document).ready(() => {
+  (() => {
+    $.getJSON('../data/questions.json', () => {
+      alert('success');
+    })
+    .done(() => {
+      alert('second success');
+    })
+    .fail(() => {
+      alert('error');
+    })
+    .always(() => {
+      alert('complete');
+    });
+  })();
+});
+
+  /*
   $.getJSON('../data/questions.json', (data) => {
     allQuestions = data;
     // Create a question, and four inputs for each possible answer
@@ -33,7 +50,7 @@ $(document).ready(() => {
     $('#sectThree').append(form);
     return;
   });
-});
+});*/
 
 $(document).ready(() => {
   $('#myForm').on('click', '#nextButton', () => {
