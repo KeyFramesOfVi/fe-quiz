@@ -50,8 +50,6 @@ body {
 	background-image: url("../images/cont3_obi_right.png");
 }
 
-
-
 .button{
 	display: inline-block;
 }
@@ -66,3 +64,37 @@ body {
 	margin-left: 800px;
 }
 
+
+#startButton{
+	height: 80px;
+	width: 140px;
+	border: 2px solid black;
+	border-radius: 70%;
+	margin: auto;
+	background-color: #e5c100;
+	-webkit-box-shadow: 5px 5px 8px #222222;
+	-moz-box-shadow: 5px 5px 8px #222222;
+	box-shadow: 5px 5px 8px #222222;
+
+}
+
+#startButton:hover{
+	background-color: #bea000;
+    box-shadow: 5px 5px 8px #222222;
+
+}
+#startButton p{
+	text-align: center;
+	margin-top: 30px;
+	font-family: Arial;
+	font-weight: bold;
+}
+
+
+#sectThree h2{
+	text-align: center;
+	margin-top: 250px;
+	background: -webkit-linear-gradient(#fff3b2, #e5c100);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
