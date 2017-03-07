@@ -14,8 +14,11 @@ function getCorrectAnswers() {
   return totalCorrect;
 }
 function startQuiz() {
+  $('#startButton').css({ 'background-color': '#aa8f00',
+    outline: 'none',
+    'box-shadow': 'inset 0px 0px 4px #ccc' });
   alert('Hi');
-  $('form').fadeOut(300, () => {
+  $('#startButton').fadeOut(300, () => {
     alert('do you get here?');
     $.getJSON('../data/questions.json', (data) => {
       $('#startButton').remove();
@@ -36,14 +39,10 @@ function startQuiz() {
       $('#sectThree').append(form);
     });
   });
-  $('form').fadeIn(300);
 }
 
 $(document).ready(() => {
   $('#startButton').click(() => {
-    $('startButton').css({ 'background-color': '#aa8f00',
-      outline: 'none',
-      'box-shadow': 'inset 0px 0px 4px #ccc' });
     startQuiz();
   });
 });
