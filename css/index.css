@@ -21,12 +21,27 @@ body {
 	display: block;
 }
 
+
 #header a img {
 	float: left;
 	display: block;
 	height : 4em;
 	width : 5em;
 	margin-top: -1em;
+}
+
+#header p {
+	margin-left: 97%;
+	margin-top: .5%;
+	position: absolute;
+	font-family: Arial;
+	color: white;
+}
+
+#header p:hover {
+	color: #e5c100;
+	text-shadow: 0 0 3px #000000;
+	box-shadow: inset 0px 0px 4px #ccc;
 }
 
 #mainImage{
@@ -111,6 +126,7 @@ h2{
     -webkit-text-fill-color: transparent;
 }
 
+
 #startButton{
 	height: 80px;
 	width: 140px;
@@ -118,9 +134,20 @@ h2{
 	border-radius: 70%;
 	margin: auto;
 	background-color: #e5c100;
+	-webkit-box-shadow: 5px 5px 8px #222222;
+	-moz-box-shadow: 5px 5px 8px #222222;
 	box-shadow: 5px 5px 8px #222222;
 
 }
+
+#startButton:hover{
+	background-color: #bea000;
+	-webkit-box-shadow: 5px 5px 8px #222222;
+	-moz-box-shadow: 5px 5px 8px #222222;
+    box-shadow: 5px 5px 8px #222222;
+
+}
+
 #startButton p{
 	text-align: center;
 	margin-top: 30px;

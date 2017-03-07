@@ -80,6 +80,8 @@ body {
 
 #startButton:hover{
 	background-color: #bea000;
+	-webkit-box-shadow: 5px 5px 8px #222222;
+	-moz-box-shadow: 5px 5px 8px #222222;
     box-shadow: 5px 5px 8px #222222;
 
 }
