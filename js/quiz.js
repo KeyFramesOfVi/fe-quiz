@@ -18,7 +18,7 @@ $(document).ready(() => {
   (() => {
     $.getJSON('../data/questions.json', (data) => {
       alert('success');
-      allQuestions = JSON.stringify(data);
+      allQuestions = data;
     })
     .done(() => {
       alert('second success');
