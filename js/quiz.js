@@ -47,6 +47,7 @@ function getCorrectAnswers() {
 
 $(document).ready(() => {
   $.getJSON('../data/questions.json', (data) => {
+    alert('I need to know it gets here!');
     allQuestions = data;
   });
   // Create a question, and four inputs for each possible answer
