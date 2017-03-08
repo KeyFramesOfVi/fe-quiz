@@ -1,23 +1,23 @@
 var cookieUtil = {
-  init() {
+  init: function () {
     this.enabled = this.cookiesEnabled() ? 'Enabled' : 'Disabled';
   },
-  createCookie(name, value, days) {
+  createCookie: function (name, value, days) {
     var expires;
     if (days) {
-      const date = new Date();
+      var date = new Date();
       date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-      expires = `; expires=${date.toGMTString()}`;
+      expires = '; expires=' + date.toGMTString();
     } else {
       expires = '';
     }
-    document.cookie = `${name}=${value}${expires}; path=/`;
+    document.cookie = name + '=' + value + expires + '; path=/';
   },
-  readCookie(name) {
-    const search = `${name}=`;
-    const ca = document.cookie.split(';');
-    for (let i = 0; i < ca.length; i += 1) {
-      let c = ca[i];
+  readCookie: function (name) {
+    var search = name + '=';
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i += 1) {
+      var c = ca[i];
       while (c.charAt(0) == ' ') {
         c = c.substring(1, c.length);
       }
@@ -27,26 +27,26 @@ var cookieUtil = {
     }
     return null;
   },
-  deleteCookie(name) {
+  devareCookie: function (name) {
     this.createCookie(name, '', -1);
   },
-  deleteAllCookies() {
+  devareAllCookies: function () {
     if (document.cookie.length > 0) {
-      const cs = document.cookie.split(';');
-      for (let i = 0; i < cs.length; i += 1) {
-        const c = cs[i].split('=');
-        const cname = c[0];
-        this.deleteCookie(cname);
+      var cs = document.cookie.split(';');
+      for (var i = 0; i < cs.length; i += 1) {
+        var c = cs[i].split('=');
+        var cname = c[0];
+        this.devareCookie(cname);
       }
     } else {
       return false;
     }
   },
-  cookiesEnabled() {
+  cookiesEnabled: function () {
     this.createCookie('test', 'test');
-    const test = this.readCookie('test');
+    var test = this.readCookie('test');
     if (test == 'test') {
-      this.deleteCookie('test');
+      this.devareCookie('test');
       return true;
     }
     return false;
