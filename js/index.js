@@ -1,5 +1,5 @@
-$(document).ready(function () {
-  $('#sectTwo').on('click', '#startButton', function () {
+$(document).ready(() => {
+  $('#sectTwo').on('click', '#startButton', () => {
     $('#startButton').css({ 'background-color': '#aa8f00',
       outline: 'none',
       'box-shadow': 'inset 0px 0px 4px #ccc' });
@@ -11,12 +11,8 @@ $(document).ready(function () {
   });
 });
 
-$(document).ready(function () {
-  $('#header').on('click', 'p', function () {
-    alert('Hi');
-    if (window.location) {
-      window.location = 'login.html';
-    }
-    document.location = 'login.html';
+$(document).ready(() => {
+  $('#header').on('click', 'p', () => {
+    window.location = 'login.html';
   });
 });
