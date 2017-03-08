@@ -6,7 +6,7 @@ function checkPwd(str) {
   } else if (str.search(/\d/) == -1) {
     return ('does not have a number. ');
   } else if (str.search(/[a-zA-Z]/) == -1) {
-    return ('does not have letters.');
+    return ('does not have varters.');
   } else if (str.search(/[^a-zA-Z0-9\\!\\@\\#\\$\\%\\^\\&\\*\\(\\)\\_\\+]/) != -1) {
     return ('uses improper characters.');
   }
@@ -24,38 +24,51 @@ function checkUserName(str) {
   return ('ok');
 }
 
+function hasStorage(){
+    try{
+        localStorage.setItem('test', '7');
+        if(localStorage.getItem('test')=== '7'){
+            localStorage.removeItem('test');
+            return true;
+        }
+    }
+    catch(er){}
+    return false;
+}
+
 $.fn.exists = function () {
   return this.length !== 0;
 };
 
-$(document).ready(() => {
-  $('#registerForm').on('click', '#registerBtn', () => {
-    let checkFlag = true;
-    const name = $('#name').val();
-    const pwd = $('#pw').val();
+$(document).ready(function () {
+  $('#registerForm').on('click', '#registerBtn', function () {
+    var checkFlag = true;
+    var name = $('#name').val();
+    var pwd = $('#pw').val();
     if (name.length === 0 || pwd.length === 0) {
       return false;
     }
-    const nameCheck = checkUserName(name);
-    const pwdCheck = checkPwd(pwd);
+    var nameCheck = checkUserName(name);
+    var pwdCheck = checkPwd(pwd);
     if (nameCheck !== 'ok') {
       if ($('.errorSection #nameError').exists()) {
-        $('.errorSection #nameError').text(`Error: username ${nameCheck}`);
+        $('.errorSection #nameError').text('Error: username ' + nameCheck + '.');
       } else {
-        $('.errorSection').prepend(`<p class="error" id="nameError">Error: username ${nameCheck}.</p>`);
+        $('.errorSection').prepend('<p class="error" id="nameError">Error: username ' +  nameCheck + '.</p>');
       }
       checkFlag = false;
     }
     if (pwdCheck !== 'ok') {
       if ($('.errorSection #pwdError').exists()) {
-        $('.errorSection #pwdError').text(`Error: password ${pwdCheck}`);
+        $('.errorSection #pwdError').text('Error: password ' + pwdCheck + '.');
       } else {
-        $('.errorSection').append(`<p class="error" id="pwdError">Error: password ${pwdCheck}.</p>`);
+        $('.errorSection').append('<p class="error" id="pwdError">Error: password ' + pwdCheck + '.</p>');
       }
       checkFlag = false;
     }
     if (checkFlag) {
       alert('Successfully created account.');
+      alert(hasStorage());
       localStorage.setItem('username', name);
       localStorage.setItem('password', pwd);
       return true;
@@ -64,12 +77,15 @@ $(document).ready(() => {
   });
 });
 
-$(document).ready(() => {
-  $('#loginForm').on('click', '#loginBtn', () => {
-    const username = $('#userName').val();
-    const password = $('#userPw').val();
-    const storageName = localStorage.getItem('username');
-    const storagePassword = localStorage.getItem('password');
+
+$(document).ready(function () {
+  $('#loginForm').on('click', '#loginBtn', function () {
+    var username = $('#userName').val();
+    var password = $('#userPw').val();
+    var storageName = localStorage.getItem('username');
+    alert(localStorage.getItem('username'));
+    alert(localStorage.getItem('password'));
+    var storagePassword = localStorage.getItem('password');
     if (username === storageName && password === storagePassword) {
       cookieUtil.init();
       cookieUtil.createCookie('name', storageName, 10);
