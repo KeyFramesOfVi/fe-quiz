@@ -67,7 +67,7 @@ $(document).ready(() => {
       alert('Successfully created account.');
       localStorage.setItem('username', name);
       localStorage.setItem('password', pwd);
-      return true;
+      window.location = 'login.html';
     }
     return false;
   });
