@@ -10,12 +10,7 @@ $(document).ready(() => {
     const password = $('.form-password').val();
     const storageName = localStorage.getItem('username');
     const storagePassword = localStorage.getItem('password');
-    alert(storageName);
-    alert(storagePassword);
-    alert(username);
-    alert(password);
     if (username === storageName && password === storagePassword) {
-      alert("Hello World");
       cookieUtil.init();
       cookieUtil.createCookie('name', storageName, 10);
       window.location = 'quiz.html';
