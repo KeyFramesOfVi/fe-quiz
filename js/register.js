@@ -41,7 +41,7 @@ $(document).ready(() => {
       if ($('.error-section .name-error').exists()) {
         $('.error-section .name-error').text(`Error: username ${nameCheck}`);
       } else {
-        $('.error-section').prepend(`<div class="alert alert-danger name-error">Error: username ${nameCheck}.</p>`);
+        $('.error-section').prepend(`<div class="alert alert-danger name-error">Error: username ${nameCheck}.</div>`);
       }
       checkFlag = false;
     } else{
@@ -53,7 +53,7 @@ $(document).ready(() => {
       if ($('.error-section .pwd-error').exists()) {
         $('.error-section .pwd-error').text(`Error: password ${pwdCheck}`);
       } else {
-        $('.error-section').append(`<div class="alert alert-danger pwd-error">Error: password ${pwdCheck}.</p>`);
+        $('.error-section').append(`<div class="alert alert-danger pwd-error">Error: password ${pwdCheck}.</div>`);
       }
       checkFlag = false;
     } else{
