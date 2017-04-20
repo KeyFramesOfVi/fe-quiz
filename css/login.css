@@ -44,7 +44,8 @@ h3 {
 
 
 .errorSection{
-    position: absolute;
+    position: relative;
+    float: left;
 }
 .error{
     width: 100%;
