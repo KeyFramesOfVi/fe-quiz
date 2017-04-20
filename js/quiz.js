@@ -105,7 +105,7 @@ $(document).ready(() => {
 });
 
 $(document).ready(() => {
-  $('.startMenu').on('click', '#startButton', () => {
+  $('.start-menu').on('click', '#startButton', () => {
     startQuiz();
   });
 });
