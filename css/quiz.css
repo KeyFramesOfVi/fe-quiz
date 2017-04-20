@@ -85,7 +85,10 @@ body {
     background: url("../img/cont2_bg.jpg");
     background-position: center;
     height: 630px;
-    margin-top: 250px;
+ }
+ .start-menu{
+ 	text-align: center;
+ 	vertical-align: middle;
  }
 #sectThree {
 	position: relative;
