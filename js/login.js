@@ -12,6 +12,8 @@ $(document).ready(() => {
     const storagePassword = localStorage.getItem('password');
     alert(storageName);
     alert(storagePassword);
+    alert(username);
+    alert(password);
     if (username === storageName && password === storagePassword) {
       alert("Hello World");
       cookieUtil.init();
