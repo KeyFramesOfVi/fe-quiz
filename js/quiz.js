@@ -100,8 +100,8 @@ function startQuiz() {
 
 $(document).ready(() => {
   const userName = cookieUtil.readCookie('name');
-  $('.startMenu').append(`<h2>Hello ${userName}, click the button below to start the Quiz!</h2>`);
-  $('.startMenu').append('<div id="startButton"> <p> Start Quiz </p> </div>');
+  $('.start-menu').append(`<h2>Hello ${userName}, click the button below to start the Quiz!</h2>`);
+  $('.start-menu').append('<div id="startButton"> <p> Start Quiz </p> </div>');
 });
 
 $(document).ready(() => {
