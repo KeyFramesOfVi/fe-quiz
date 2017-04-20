@@ -35,6 +35,8 @@ $(document).ready(() => {
     const password = $('.form-password').val();
     const storageName = localStorage.getItem('username');
     const storagePassword = localStorage.getItem('password');
+    alert(storageName);
+    alert(storagePassword);
     if (username === storageName && password === storagePassword) {
       cookieUtil.init();
       cookieUtil.createCookie('name', storageName, 10);
