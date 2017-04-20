@@ -18,9 +18,9 @@ $(document).ready(() => {
       cookieUtil.createCookie('name', storageName, 10);
       window.location = 'quiz.html';
     } else if (!$('.errorSection .login-error').exists()) {
-      $('.errorSection').append('<div class="alert alert-danger login-error">Error: username or password is not correct.</div>');
+      $('.error-section').append('<div class="alert alert-danger login-error">Error: username or password is not correct.</div>');
     } else {
-      $('.errorSection .login-error').text('Error: username or password is not correct.');
+      $('.error-section .login-error').text('Error: username or password is not correct.');
     }
     return false;
   });
