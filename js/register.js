@@ -67,6 +67,7 @@ $(document).ready(() => {
       alert('Successfully created account.');
       localStorage.setItem('username', name);
       localStorage.setItem('password', pwd);
+      alert('Successfully added to localStorage');
       window.location = 'login.html';
     }
     return false;
