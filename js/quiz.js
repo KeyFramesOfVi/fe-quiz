@@ -30,7 +30,7 @@ function startQuiz() {
       const list = $('<ul class="quizList"></ul>');
       let answerValue = 0;
       question.choices.forEach((choice) => {
-        list.append(`<li><input type="radio" name="answer" value=${answerValue}><label>${choice}</label></li>`);
+        list.append(`<li><input type="radio" name="answer" value=${answerValue} id="radio${answerValue + 1}"><label for=radio${answerValue + 1}>${choice}</label></li>`);
         answerValue += 1;
       });
       form.append(list);
