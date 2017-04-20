@@ -19,7 +19,7 @@ function startQuiz() {
     'box-shadow': 'inset 0px 0px 4px #ccc' });
 
   $('.startMenu').fadeOut(300, () => {
-    $.getJSON('questions.json', (data) => {
+    $.getJSON('/data/questions.json', (data) => {
       $('.startMenu').remove();
 
       allQuestions = data;
