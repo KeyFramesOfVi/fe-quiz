@@ -86,9 +86,22 @@ body {
     background-position: center;
     height: 630px;
  }
- .start-menu{
+
+
+
+#sectThree h2{
+	text-align: center;
+	margin-top: 250px;
+	background: -webkit-linear-gradient(#fff3b2, #e5c100);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+ .start-menu h2{
  	text-align: center;
- 	vertical-align: middle;
+	margin-top: 250px;
+	background: -webkit-linear-gradient(#fff3b2, #e5c100);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
  }
 #sectThree {
 	position: relative;
