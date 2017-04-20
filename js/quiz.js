@@ -18,9 +18,9 @@ function startQuiz() {
     outline: 'none',
     'box-shadow': 'inset 0px 0px 4px #ccc' });
 
-  $('.startMenu').fadeOut(300, () => {
+  $('.start-menu').fadeOut(300, () => {
     $.getJSON('./data/questions.json', (data) => {
-      $('.startMenu').remove();
+      $('.start-menu').remove();
 
       allQuestions = data;
       // Create a question, and four inputs for each possible answer
@@ -36,7 +36,7 @@ function startQuiz() {
       form.append(list);
       form.append('<button class="button" id="nextButton" type="button">Next</button>');
       form.append('<button class="button" id="backButton" type="button">Back</button>');
-      $('#sectThree').append(form);
+      $('.row').append(form);
       $('form').on('click', '#nextButton', () => {
         if (!$('input:radio').is(':checked')) {
           alert('Please choose an answer before moving on.');
