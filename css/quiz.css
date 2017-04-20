@@ -38,7 +38,7 @@ body {
 	top: -4px;
 	width: 470px;
 	height: 300px;
-	background-image: url("../images/cont3_obi_left.png");	
+	background-image: url("../img/cont3_obi_left.png");	
 }
 
 #lineRight {
@@ -47,7 +47,7 @@ body {
 	bottom: 0px;
 	width: 143px;
 	height: 181px;
-	background-image: url("../images/cont3_obi_right.png");
+	background-image: url("../img/cont3_obi_right.png");
 }
 
 .button{
