@@ -44,8 +44,7 @@ $(document).ready(() => {
         $('.error-section').prepend(`<div class="alert alert-danger name-error">Error: username ${nameCheck}.</p>`);
       }
       checkFlag = false;
-    }
-    else{
+    } else{
       if ($('.error-section .name-error').exists()) {
         $('.error-section .name-error').remove();
       }
@@ -57,8 +56,7 @@ $(document).ready(() => {
         $('.error-section').append(`<div class="alert alert-danger pwd-error">Error: password ${pwdCheck}.</p>`);
       }
       checkFlag = false;
-    }
-    else{
+    } else{
       if ($('.error-section .pwd-error').exists()) {
         $('.error-section .pwd-error').remove();
       }

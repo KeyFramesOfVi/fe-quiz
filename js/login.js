@@ -38,6 +38,7 @@ $(document).ready(() => {
     alert(storageName);
     alert(storagePassword);
     if (username === storageName && password === storagePassword) {
+      alert("Hello World");
       cookieUtil.init();
       cookieUtil.createCookie('name', storageName, 10);
       window.location = 'quiz.html';
