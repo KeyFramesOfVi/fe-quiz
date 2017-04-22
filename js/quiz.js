@@ -76,7 +76,7 @@ function startQuiz() {
 
 
       $(document).ready(() => {
-        $('form-bottom').on('click', '.back', () => {
+        $('.form-bottom').on('click', '.back', () => {
           if (index === 0) {
             alert('This is the first question, cannot go further back.');
           } else {
