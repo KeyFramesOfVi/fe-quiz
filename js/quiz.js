@@ -96,6 +96,7 @@ function startQuiz() {
       });
     });
   });
+  $('form-box').fadeIn(300);
 }
 
 
