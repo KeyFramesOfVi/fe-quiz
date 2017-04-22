@@ -371,6 +371,7 @@ h1, h2 {
     font-weight: 100;
     color: #555;
     line-height: 50px;
+    text-align: center;
 }
 
 h3, p {
