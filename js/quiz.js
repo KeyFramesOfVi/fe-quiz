@@ -38,7 +38,9 @@ function startQuiz() {
       form.append('<div class="next"><button class=".btn" type="button">Next</button></div>');
       form.append('<div class="back"><button class=".btn" type="button">Back</button></div>');
       //$('.row').append(form);
-      $('.registration-form').on('click', '.next', () => {
+      
+
+      $('.form-bottom').on('click', '.next', () => {
         if (!$('input:radio').is(':checked')) {
           alert('Please choose an answer before moving on.');
         } else {
@@ -71,8 +73,10 @@ function startQuiz() {
           $('.form-box').fadeIn(300);
         }
       });
+
+
       $(document).ready(() => {
-        $('registration-form').on('click', '.back', () => {
+        $('form-bottom').on('click', '.back', () => {
           if (index === 0) {
             alert('This is the first question, cannot go further back.');
           } else {
@@ -96,7 +100,7 @@ function startQuiz() {
       });
     });
   });
-  $('form-box').fadeIn(300);
+  $('.form-box').fadeIn(300);
 }
 
 
