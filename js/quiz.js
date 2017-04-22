@@ -14,18 +14,19 @@ function getCorrectAnswers() {
   return totalCorrect;
 }
 function startQuiz() {
-  $('#startButton').css({ 'background-color': '#aa8f00',
+  /*$('startButton').css({ 'background-color': '#aa8f00',
     outline: 'none',
-    'box-shadow': 'inset 0px 0px 4px #ccc' });
+    'box-shadow': 'inset 0px 0px 4px #ccc' });*/
 
-  $('.start-menu').fadeOut(300, () => {
+  $('.form-box').fadeOut(300, () => {
     $.getJSON('./data/questions.json', (data) => {
-      $('.start-menu').remove();
+      /*$('.start-menu').remove();*/
 
       allQuestions = data;
       // Create a question, and four inputs for each possible answer
       let question = allQuestions[index];
-      let form = $('<form method="post" id="myForm"></form>');
+      //let form = $('<form method="post" id="myForm"></form>');
+      let form = $('.registration-form');
       form.append(`<h2>${question.question}</h2>`);
       const list = $('<ul class="quizList"></ul>');
       let answerValue = 0;
@@ -34,14 +35,14 @@ function startQuiz() {
         answerValue += 1;
       });
       form.append(list);
-      form.append('<button class="button" id="nextButton" type="button">Next</button>');
-      form.append('<button class="button" id="backButton" type="button">Back</button>');
-      $('.row').append(form);
-      $('form').on('click', '#nextButton', () => {
+      form.append('<div class="next"><button class=".btn" type="button">Next</button></div>');
+      form.append('<div class="back"><button class=".btn" type="button">Back</button></div>');
+      //$('.row').append(form);
+      $('.registration-form').on('click', '.next', () => {
         if (!$('input:radio').is(':checked')) {
           alert('Please choose an answer before moving on.');
         } else {
-          $('form').fadeOut(300, () => {
+          $('registration-form').fadeOut(300, () => {
             const userAnswer = +$('input[name="answer"]:checked').val();
             answers.push(userAnswer);
             localStorage.setItem(`answer${index}`, userAnswer);
@@ -53,7 +54,7 @@ function startQuiz() {
             }
             index += 1;
             question = allQuestions[index];
-            form = $('body').find('#myForm');
+            form = $('body').find('.registration-form');
             form.find('h2').text(question.question);
             const quizItems = $('label');
             // eslint-disable-next-line func-names
@@ -67,20 +68,20 @@ function startQuiz() {
               $(`input[value=${userAnswer}]`).prop('checked', false);
             }
           });
-          $('form').fadeIn(300);
+          $('registration-form').fadeIn(300);
         }
       });
       $(document).ready(() => {
-        $('form').on('click', '#backButton', () => {
+        $('registration-form').on('click', '.back', () => {
           if (index === 0) {
             alert('This is the first question, cannot go further back.');
           } else {
-            $('form').fadeOut(300, () => {
+            $('registration-form').fadeOut(300, () => {
               index -= 1;
               answers.pop();
               const userAnswer = localStorage.getItem(`answer${index}`);
               question = allQuestions[index];
-              form = $('body').find('#myForm');
+              form = $('body').find('.registration-form');
               form.find('h2').text(question.question);
               const quizItems = $('label');
               // eslint-disable-next-line func-names
@@ -89,7 +90,7 @@ function startQuiz() {
               });
               $(`input[value=${userAnswer}]`).prop('checked', true);
             });
-            $('form').fadeIn(300);
+            $('registration-form').fadeIn(300);
           }
         });
       });
@@ -105,7 +106,7 @@ $(document).ready(() => {
 });
 
 $(document).ready(() => {
-  $('.form-bottom').on('click', '#start', () => {
+  $('.form-bottom').on('click', '.start .btn', () => {
     startQuiz();
   });
 });
