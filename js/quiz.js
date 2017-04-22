@@ -20,7 +20,6 @@ function startQuiz() {
 
   $('.form-box').fadeOut(300, () => {
     $.getJSON('./data/questions.json', (data) => {
-      /*$('.start-menu').remove();*/
 
       allQuestions = data;
       // Create a question, and four inputs for each possible answer
@@ -43,7 +42,7 @@ function startQuiz() {
         if (!$('input:radio').is(':checked')) {
           alert('Please choose an answer before moving on.');
         } else {
-          $('registration-form').fadeOut(300, () => {
+          $('.form-box').fadeOut(300, () => {
             const userAnswer = +$('input[name="answer"]:checked').val();
             answers.push(userAnswer);
             localStorage.setItem(`answer${index}`, userAnswer);
@@ -69,7 +68,7 @@ function startQuiz() {
               $(`input[value=${userAnswer}]`).prop('checked', false);
             }
           });
-          $('registration-form').fadeIn(300);
+          $('.form-box').fadeIn(300);
         }
       });
       $(document).ready(() => {
@@ -77,7 +76,7 @@ function startQuiz() {
           if (index === 0) {
             alert('This is the first question, cannot go further back.');
           } else {
-            $('registration-form').fadeOut(300, () => {
+            $('.form-box').fadeOut(300, () => {
               index -= 1;
               answers.pop();
               const userAnswer = localStorage.getItem(`answer${index}`);
@@ -91,7 +90,7 @@ function startQuiz() {
               });
               $(`input[value=${userAnswer}]`).prop('checked', true);
             });
-            $('registration-form').fadeIn(300);
+            $('.form-box').fadeIn(300);
           }
         });
       });
