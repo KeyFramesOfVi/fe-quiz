@@ -4,7 +4,12 @@ body {
 	color: #FFFFFF;
 }
 
-
+.btn span.glyphicon {    			
+	opacity: 0;				
+}
+.btn.active span.glyphicon {				
+	opacity: 1;				
+}
 .navbar-default,
  a {
      -webkit-transition: all .35s;
