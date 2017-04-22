@@ -27,7 +27,8 @@ function startQuiz() {
       let question = allQuestions[index];
       //let form = $('<form method="post" id="myForm"></form>');
       let form = $('.registration-form');
-      form.append(`<h2>${question.question}</h2>`);
+      $('form-box').append(`<h2>${question.question}</h2>`);
+     // form.append(`<h2>${question.question}</h2>`);
       const list = $('<ul class="quizList"></ul>');
       let answerValue = 0;
       question.choices.forEach((choice) => {
