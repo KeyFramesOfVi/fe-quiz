@@ -5,14 +5,12 @@ $.fn.exists = function () {
 
 $(document).ready(() => {
   $('.login-form').on('click', '.btn', () => {
-    alert("Hello");
     const username = $('.form-name').val();
     const password = $('.form-password').val();
     const storageName = localStorage.getItem('username');
     const storagePassword = localStorage.getItem('password');
     if (username === storageName && password === storagePassword) {
       cookieUtil.init();
-      alert(cookieUtil);
       cookieUtil.createCookie('name', storageName, 10);
       window.location = 'quiz.html';
     } else if (!$('.error-section .login-error').exists()) {
