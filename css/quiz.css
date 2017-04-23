@@ -387,8 +387,11 @@ h3, p {
 
 .next{
   text-align: right;
+  display: inline-block;
+
 }
 
 .back{
   text-align: left;
+  display: inline-block;
 }

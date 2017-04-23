@@ -20,7 +20,7 @@ function startQuiz() {
 
   $('.form-box').fadeOut(300, () => {
     $.getJSON('./data/questions.json', (data) => {
-      $('.form.top h2').remove();
+      $('.form-top h2').remove();
       $('.form-bottom button').remove();
       allQuestions = data;
       // Create a question, and four inputs for each possible answer
