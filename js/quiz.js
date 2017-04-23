@@ -57,7 +57,7 @@ function startQuiz() {
             index += 1;
             question = allQuestions[index];
             form = $('body').find('.registration-form');
-            $('.form-top').text(question.question);
+            $('.form-top h2').text(question.question);
             const quizItems = $('label');
             // eslint-disable-next-line func-names
             quizItems.each(function (i) {
@@ -86,7 +86,7 @@ function startQuiz() {
               const userAnswer = localStorage.getItem(`answer${index}`);
               question = allQuestions[index];
               form = $('body').find('.registration-form');
-              form.find('h2').text(question.question);
+              $('.form-top h2').text(question.question);
               const quizItems = $('label');
               // eslint-disable-next-line func-names
               quizItems.each(function (i) {
