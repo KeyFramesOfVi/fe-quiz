@@ -20,7 +20,8 @@ function startQuiz() {
 
   $('.form-box').fadeOut(300, () => {
     $.getJSON('./data/questions.json', (data) => {
-
+      $('.form.top h2').remove();
+      $('.form-bottom button').remove();
       allQuestions = data;
       // Create a question, and four inputs for each possible answer
       let question = allQuestions[index];
@@ -28,7 +29,7 @@ function startQuiz() {
       let form = $('.registration-form');
       $('.form-top').append(`<h2>${question.question}</h2>`);
      // form.append(`<h2>${question.question}</h2>`);
-      const list = $('<ul class="quizList"></ul>');
+      const list = $('<ul class="quiz-list"></ul>');
       let answerValue = 0;
       question.choices.forEach((choice) => {
         list.append(`<li><input type="radio" name="answer" value=${answerValue} id="radio${answerValue + 1}"><label for=radio${answerValue + 1}>${choice}</label></li>`);
@@ -57,7 +58,7 @@ function startQuiz() {
             index += 1;
             question = allQuestions[index];
             form = $('body').find('.registration-form');
-            form.find('h2').text(question.question);
+            $('.form-top').text(question.question);
             const quizItems = $('label');
             // eslint-disable-next-line func-names
             quizItems.each(function (i) {

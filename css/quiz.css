@@ -229,7 +229,7 @@ body {
 	overflow: hidden;
 }
 
-#myForm h2{
+.registration-form h2{
 	text-align: center;
 	margin-top: 200px;
 	background: -webkit-linear-gradient(#fff3b2, #e5c100);
@@ -237,11 +237,11 @@ body {
     -webkit-text-fill-color: transparent;
 }
 
-#myForm ul{
+.registration-form ul{
 	text-align: center;
 }
 
-#myForm ul li{
+.registration-form ul li{
 	padding: 8px;
 	display: block;
 }
@@ -383,4 +383,12 @@ h3, p {
 
 .start{
   text-align: center;
+}
+
+.next{
+  text-align: right;
+}
+
+.back{
+  text-align: left;
 }
