@@ -1,9 +1,12 @@
 let allQuestions;
-
 let index = 0;
 let correctAnswers = 0;
 const answers = [];
 
+/*
+ * Helper function that counts the correct answers once the
+ * quiz is finished.
+ */
 function getCorrectAnswers() {
   let totalCorrect = 0;
   for (let i = 0, len = answers.length; i < len; i += 1) {
@@ -13,11 +16,15 @@ function getCorrectAnswers() {
   }
   return totalCorrect;
 }
-function startQuiz() {
-  /*$('startButton').css({ 'background-color': '#aa8f00',
-    outline: 'none',
-    'box-shadow': 'inset 0px 0px 4px #ccc' });*/
 
+
+/*
+ * Quiz starter function. Reads the json file that contains
+ * the questions for the quiz, and then stores that information
+ * in the allQuestions variable, modifying the page when the user
+ * answers or goes back to a previous question.
+ */
+function startQuiz() {
   $('.form-box').fadeOut(300, () => {
     $.getJSON('./data/questions.json', (data) => {
       $('.form-top h2').remove();
@@ -25,10 +32,8 @@ function startQuiz() {
       allQuestions = data;
       // Create a question, and four inputs for each possible answer
       let question = allQuestions[index];
-      //let form = $('<form method="post" id="myForm"></form>');
       let form = $('.registration-form');
       $('.form-top').append(`<h2>${question.question}</h2>`);
-     // form.append(`<h2>${question.question}</h2>`);
       const list = $('<ul class="quiz-list"></ul>');
       let answerValue = 0;
       question.choices.forEach((choice) => {
@@ -38,8 +43,10 @@ function startQuiz() {
       form.append(list);
       form.append('<div class="next"><button type="button" class="btn-primary">Next</button></div>');
       form.append('<div class="back"><button type="button" class="btn-primary">Back</button></div>');
-      
 
+      /*
+       * Function for when the next button is clicked
+       */
       $('.form-bottom').on('click', '.next', () => {
         if (!$('input:radio').is(':checked')) {
           alert('Please choose an answer before moving on.');
@@ -74,7 +81,9 @@ function startQuiz() {
         }
       });
 
-
+      /*
+       * Function for when the back button is clicked
+       */
       $(document).ready(() => {
         $('.form-bottom').on('click', '.back', () => {
           if (index === 0) {
@@ -103,77 +112,21 @@ function startQuiz() {
   $('.form-box').fadeIn(300);
 }
 
-
+/*
+ * This loads up a hello based on the user that has logged in to the quiz.
+ */
 $(document).ready(() => {
   const userName = cookieUtil.readCookie('name');
   $('.form-top').append(`<h2>Hello ${userName}, click the button below to start the Quiz!</h2>`);
   $('.form-bottom').append('<div class="start"><button type="submit" class="btn">Start Quiz!</button></div>');
 });
 
+
+/*
+ * Quiz Starter for when the user hits the start button
+ */
 $(document).ready(() => {
   $('.form-bottom').on('click', '.start .btn', () => {
     startQuiz();
   });
 });
-
-/*
-$(document).ready(() => {
-  $('form').on('click', '#nextButton', () => {
-    if (!$('input:radio').is(':checked')) {
-      alert('Please choose an answer before moving on.');
-    } else {
-      $('form').fadeOut(300, () => {
-        const userAnswer = +$('input[name="answer"]:checked').val();
-        answers.push(userAnswer);
-        localStorage.setItem(`answer${index}`, userAnswer);
-        if (index === allQuestions.length - 1) {
-          correctAnswers = getCorrectAnswers();
-          alert(`Congratulations for finishing the quiz. You got ${correctAnswers} questions right!`);
-          window.location = 'index.html';
-          return;
-        }
-        index += 1;
-        const question = allQuestions[index];
-        const form = $('body').find('#myForm');
-        form.find('h2').text(question.question);
-        const quizItems = $('label');
-        // eslint-disable-next-line func-names
-        quizItems.each(function (i) {
-          $(this).text(question.choices[i]);
-        });
-        if (localStorage.getItem(`answer${index}`)) {
-          const nextAnswer = localStorage.getItem(`answer${index}`);
-          $(`input[value=${nextAnswer}]`).prop('checked', true);
-        } else {
-          $(`input[value=${userAnswer}]`).prop('checked', false);
-        }
-      });
-      $('form').fadeIn(300);
-    }
-  });
-});
-
-$(document).ready(() => {
-  $('form').on('click', '#backButton', () => {
-    if (index === 0) {
-      alert('This is the first question, cannot go further back.');
-    } else {
-      $('form').fadeOut(300, () => {
-        index -= 1;
-        answers.pop();
-        const userAnswer = localStorage.getItem(`answer${index}`);
-        const question = allQuestions[index];
-        const form = $('body').find('#myForm');
-        form.find('h2').text(question.question);
-        const quizItems = $('label');
-        // eslint-disable-next-line func-names
-        quizItems.each(function (i) {
-          $(this).text(question.choices[i]);
-        });
-        $(`input[value=${userAnswer}]`).prop('checked', true);
-      });
-      $('form').fadeIn(300);
-    }
-  });
-});
-*/
