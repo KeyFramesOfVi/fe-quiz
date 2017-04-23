@@ -386,17 +386,16 @@ h3, p {
 }
 
 .next{
-  width: 70px;
-  height: 70px;
   float: right;
   text-align: right;
   display: inline-block;
-
+}
+.next button, .back button{
+  width: 70px;
+  height: 70px;
 }
 
 .back{
-  width: 70px;
-  height: 70px;
   float: left;
   text-align: left;
   display: inline-block;
