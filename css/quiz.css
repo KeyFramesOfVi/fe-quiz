@@ -386,12 +386,14 @@ h3, p {
 }
 
 .next{
+  float: right;
   text-align: right;
   display: inline-block;
 
 }
 
 .back{
+  float: left;
   text-align: left;
   display: inline-block;
 }
