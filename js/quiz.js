@@ -36,8 +36,8 @@ function startQuiz() {
         answerValue += 1;
       });
       form.append(list);
-      form.append('<div class="next"><button class=".btn" type="button">Next</button></div>');
-      form.append('<div class="back"><button class=".btn" type="button">Back</button></div>');
+      form.append('<div class="next"><button class=".btn" type="submit">Next</button></div>');
+      form.append('<div class="back"><button class=".btn" type="submit">Back</button></div>');
       //$('.row').append(form);
       
 
