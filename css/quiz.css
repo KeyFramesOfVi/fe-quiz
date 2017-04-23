@@ -386,6 +386,8 @@ h3, p {
 }
 
 .next{
+  width: 70px;
+  height: 70px;
   float: right;
   text-align: right;
   display: inline-block;
@@ -393,6 +395,8 @@ h3, p {
 }
 
 .back{
+  width: 70px;
+  height: 70px;
   float: left;
   text-align: left;
   display: inline-block;
