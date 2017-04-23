@@ -7,7 +7,7 @@ Bootstrap has been used as a template for the site as of this version.
 
 The goal of the Quiz App is to show VanillaJS and JQuery proficiency, although it mainly shows the latter through DOM manipulation.
 
-Tasks that I completed for this small quiz includes:
+Tasks that I completed for this small quiz include:
 
 
 * Creating a registration and login page using JavaScript.
